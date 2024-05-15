@@ -15,12 +15,15 @@
         "project_timesheet_time_control",
         # https://github.com/OCA/timesheet/
         "hr_timesheet_time_type",
+        #
+        "helpdesk_mgmt_timesheet",
     ],
     "data": [
         # "security/some_model_security.xml",
         "security/ir.model.access.csv",
         "views/hr_timesheet_view.xml",
         "views/project_time_type_rule_views.xml",
+        "views/project_time_type_view.xml",
     ],
     "application": False,
     "auto_install": True,

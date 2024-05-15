@@ -1,37 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright <YEAR(S)> <AUTHOR(S)>
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<!-- Copyright 2024 ALBA Software S.L.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0) -->
 <odoo>
 
-<record id="hr_timesheet_line_form" model="ir.ui.view">
-    <field name="name">account.analytic.line.form.project_type</field>
-    <field name="model">account.analytic.line</field>
-    <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form" />
-    <field name="arch" type="xml">
-        <field name="task_id" position="after">
-            <field name="time_type_id" />
-        </field>
-    </field>
-</record>
-
-<record id="hr_timesheet_line_search" model="ir.ui.view">
-    <field name="name">account.analytic.line.search.time_type</field>
-    <field name="model">account.analytic.line</field>
-    <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search" />
-    <field name="arch" type="xml">
-        <field name="task_id" position="after">
-            <field name="time_type_id" />
-        </field>
-        <filter name="groupby_task" position="after">
-            <filter
-                    string="Type"
+    <record id="hr_timesheet_line_search" model="ir.ui.view">
+        <field name="name">account.analytic.line.search.time_type</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search" />
+        <field name="arch" type="xml">
+            <field name="task_id" position="after">
+                <field name="time_type_id" />
+            </field>
+            <filter name="groupby_task" position="after">
+                <filter
+                    string="Time Type"
                     name="groupby_time_type"
                     domain="[]"
                     context="{'group_by': 'time_type_id'}"
                 />
-        </filter>
-    </field>
+            </filter>
+        </field>
+    </record>
 
-</record>
+    <!--
+    <record id="view_hr_timesheet_time_form_inherit" model="ir.ui.view">
+        <field name="name"></field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet_time_type.view_hr_timesheet_time_form_inherit" />
+        <field name="arch" type="xml">
+            <field name="time_type_id" position="attributes">
+                <attribute name="domain">
+                    ['|',('employee_ids','=',False),('employee_ids','in',[employee_id])]</attribute>
+            </field>
+        </field>
+    </record>
+-->
+
+    <record id="timesheet_helpdesk_ticket_view_form" model="ir.ui.view">
+        <field name="name">timesheet.helpdesk.ticket.form.view.time_control_type</field>
+        <field name="model">helpdesk.ticket</field>
+        <field
+            name="inherit_id"
+            ref="helpdesk_mgmt_timesheet.timesheet_helpdesk_ticket_view_form"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='timesheet_ids']//field[@name='name']"
+                position="after"
+            >
+                <field name="time_type_id" />
+            </xpath>
+        </field>
+    </record>
 
 </odoo>

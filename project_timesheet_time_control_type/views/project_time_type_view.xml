@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 ALBA Software S.L.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0) -->
+<odoo>
+
+<record id="view_project_time_type_form" model="ir.ui.view">
+    <field name="name">project.time.type.form.control</field>
+    <field name="model">project.time.type</field>
+    <field name="inherit_id" ref="hr_timesheet_time_type.view_project_time_type_form" />
+    <field name="arch" type="xml">
+        <sheet position="inside">
+            <group string="Filter by users">
+                <field name="user_ids" widget="many2many_tags" options="{'no_create': True}" nolabel="1" colspan="2" />
+            </group>
+        </sheet>
+    </field>
+</record>
+
+</odoo>

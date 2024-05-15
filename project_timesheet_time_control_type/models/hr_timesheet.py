@@ -12,6 +12,8 @@ class AccountAnalyticLine(models.Model):
         store=True,
         readonly=False,
         copy=True,
+        # domain="['|',('employee_ids','=',False),('employee_ids','in',[employee_id])]"
+        domain="['|',('user_ids','=',False),('user_ids','in',[user_id])]",
     )
 
     @api.depends("employee_id", "project_id", "task_id")

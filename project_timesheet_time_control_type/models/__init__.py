@@ -2,3 +2,4 @@
 
 from . import project_time_type_rule
 from . import hr_timesheet
+from . import project_time_type

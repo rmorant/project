@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 ALBA Software S.L.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0) -->
 <odoo>
     <record id="view_project_time_type_rule_tree" model="ir.ui.view">
         <field name="name">project.time.type.rule.tree</field>
