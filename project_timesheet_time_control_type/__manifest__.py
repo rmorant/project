@@ -24,6 +24,7 @@
         "views/hr_timesheet_view.xml",
         "views/project_time_type_rule_views.xml",
         "views/project_time_type_view.xml",
+        "wizards/hr_timesheet_switch_view.xml",
     ],
     "application": False,
     "auto_install": True,

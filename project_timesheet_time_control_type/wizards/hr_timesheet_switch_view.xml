@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 ALBASoft - Rafael Morant
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<data>
+    <!-- Wizard view to resume work
+    <record id="hr_timesheet_switch_form" model="ir.ui.view">
+        <field name="name">hr.timesheet.switch time_type</field>
+        <field name="model">hr.timesheet.switch</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.hr_timesheet_switch_form" />
+        <field name="arch" type="xml">
+            <field name="date" position="before">
+                <field name="time_type_id" />
+            </field>
+        </field>
+    </record>
+    -->
+
+    <record id="hr_timesheet_line_form" model="ir.ui.view">
+        <field name="name">account.analytic.line.form.time_type</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id"
+        ref="project_timesheet_time_control.hr_timesheet_line_form"
+        />
+        <field name="arch" type="xml">
+            <field name="date_time" position="before">
+                <field name="user_id" invisible="1"/>
+                <field name="time_type_id" />
+            </field>
+        </field>
+    </record>
+
+</data>
