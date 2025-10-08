@@ -6,14 +6,13 @@ from odoo import models, fields
 
 class ProjectTimeType(models.Model):
     _inherit = "project.time.type"
+    _order = "sequence"
 
-    #employee_ids = fields.Many2many(
-    #    string="Employee Filter",
-    #    comodel_name="hr.employee",
-    #    relation="project_time_type_employee_rel",
-    #    column1="time_type_id",
-    #    column2="employee_id",
-    #)
+    sequence = fields.Integer(
+        string="Sequence",
+        default=10,
+        help="Gives the sequence order when displaying a list of time types.",
+    )
 
     user_ids = fields.Many2many(
         string="User Filter",
@@ -22,5 +21,3 @@ class ProjectTimeType(models.Model):
         column1="time_type_id",
         column2="user_id",
     )
-
-
